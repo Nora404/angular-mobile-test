@@ -7,6 +7,7 @@ import { PlanTrainingComponent } from './plan-training/plan-training.component';
 import { StrengthComponent } from './strength/strength.component';
 import { StaminaComponent } from './stamina/stamina.component';
 import { ProfilComponent } from './profil/profil.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProfilComponent } from './profil/profil.component';
     ProfilComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [{provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent]
