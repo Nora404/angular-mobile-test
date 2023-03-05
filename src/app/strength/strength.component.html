@@ -1,0 +1,19 @@
+<p>strength works!</p>
+
+<ng-container *ngFor="let element of json">
+    <table class="entrie">
+        <tr class="tableHeader">
+            <td style="width: 20%;">{{element.shortcut}}</td>
+            <td>{{element.name}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <img src={{imgURL}} alt="bild" style="width: 100%;">
+            </td>
+        </tr>
+        <tr>
+            <td>Gewicht</td>
+            <td>{{element.weightRange.start}} bis {{element.weightRange.end}} </td>
+        </tr>
+    </table><br>
+</ng-container>
