@@ -1,0 +1,38 @@
+{
+    "01.01.1970": [
+        {
+            "planName" : "plan01",
+            "A1": 30,
+            "Br5": 40,
+            "ST": {
+                "distance": 0.97,
+                "time": 15,
+                "settings": "level 8"
+            }
+        }
+    ],
+    "04.01.1970": [
+        {
+            "planName" : "plan01",
+            "A1": 34,
+            "Br5": 40,
+            "ST": {
+                "distance": 0.89,
+                "time": 15,
+                "settings": "level 8"
+            }
+        }
+    ],
+    "09.01.1970": [
+        {
+            "planName" : "plan01",
+            "A1": 42,
+            "Br5": 42,
+            "ST": {
+                "distance": 0.95,
+                "time": 15,
+                "settings": "level 8"
+            }
+        }
+    ]
+}

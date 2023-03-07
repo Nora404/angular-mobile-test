@@ -1,0 +1,31 @@
+{
+    "plan01":[
+        {
+            "training": "strength",
+            "shortcut":"A1",
+            "name":"Armbeuger",
+            "image":"bild.png",
+            "weight": 30,
+            "settings": "1, A",
+            "note": "Test"
+        },
+        {
+            "training": "strength",
+            "shortcut":"Br5",
+            "name":"Brustpresse",
+            "image":"bild.png",
+            "weight": 40,
+            "settings": "12",
+            "note": "Hallo"
+        },
+        {
+            "training": "stamina",
+            "shortcut":"ST",
+            "name":"Stepper",
+            "image":"bild.png",
+            "time": 15,
+            "settings": "level 8",
+            "note": "Möb"
+        }
+    ] 
+}
