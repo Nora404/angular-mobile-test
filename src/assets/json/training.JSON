@@ -1,29 +1,35 @@
 {
-    "plan01":[
+    "plan":[
         {
+            "planName" : "plan01",
+            "sequence": 1,
             "training": "strength",
             "shortcut":"A1",
             "name":"Armbeuger",
             "image":"bild.png",
-            "weight": 30,
+            "value": 30,
             "settings": "1, A",
             "note": "Test"
         },
         {
+            "planName" : "plan01",
+            "sequence": 2,
             "training": "strength",
             "shortcut":"Br5",
             "name":"Brustpresse",
             "image":"bild.png",
-            "weight": 40,
+            "value": 40,
             "settings": "12",
-            "note": "Hallo"
+            "note": ""
         },
         {
+            "planName" : "plan01",
+            "sequence": 3,
             "training": "stamina",
             "shortcut":"ST",
             "name":"Stepper",
             "image":"bild.png",
-            "time": 15,
+            "value": 15,
             "settings": "level 8",
             "note": "Möb"
         }

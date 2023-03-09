@@ -1,8 +1,9 @@
 <div id="content">
-    <div id="bottom"></div>
+    <div id="bottom">
+        <strong (click)="handleMenu()" [firstWordRed]="header"></strong>
+    </div>
 
     <div id="middle">
-        <h1 (click)="handleMenu()">{{header}}</h1>
     
         <ng-container *ngIf="header==='Hallo Welt'">
             <button (click)="handleStart()"> Training starten </button><br>

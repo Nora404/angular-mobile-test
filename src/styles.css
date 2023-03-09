@@ -4,6 +4,13 @@ body{
     font-family: Helvetica, sans-serif;
     margin: 0;
     padding: 0;
+    color: gray;
+}
+
+.header1{
+    text-align: center;
+    margin: 0;
+    font-size: 8vw ;
 }
 
 #content {
@@ -16,12 +23,20 @@ body{
     padding: 0;
 }
 
-#bottom, #foot{
-    background-color: gray;
+#foot{
+    background-color: gainsboro;
     width: 100%;
+    padding: 5%;
     margin: 0;
-    padding: 3%;
     font-size: 3vw ;
+}
+
+#bottom {
+    background-color: gainsboro;
+    width: 100%;
+    padding: 5%;
+    margin: 0;
+    font-size: 8vw ;
 }
 
 #middle {
@@ -30,6 +45,7 @@ body{
     margin: 0;
     padding: 3%;
     padding-bottom: 8%;
+    border-top: 8px solid darkred;
 }
 
 h1 {
@@ -37,18 +53,47 @@ h1 {
 }
 
 button {
-    background-color: rgb(209, 209, 209);
+    background-image: linear-gradient(to right, white 0%, gainsboro 100%);
     width: 90%;
     height: 10%;
     margin: 5%;
     padding: 3%;
     font-size: 8vw;
-    border: 8px outset rgb(179, 29, 29);
-    border-radius: 8px;
+    border: 8px outset darkred;
+    border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: black;
 } 
 
 button:active {
     background-color: white;
-    border: 8px inset rgb(179, 29, 29);
+    border: 8px inset darkred;
+}
+
+.btnLittle {
+    background-image: linear-gradient(to right, white 0%, gainsboro 100%);
+    width: 90%;
+    height: 7%;
+    margin: 2%;
+    padding: 2%;
+    font-size: 6vw;
+    border: 5px outset darkred;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: black;
+}
+
+
+.entrie {
+    border: 3px solid darkred;
+    text-align: left;
+    width: 100%;
+    color: black;
+}
+
+.tableHeader {
+    background-color: gainsboro;
+    padding: 2%;
+    font-size: larger;
+    color: black;
 }

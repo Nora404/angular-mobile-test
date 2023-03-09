@@ -1,19 +1,20 @@
-import { AfterViewInit, Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Directive({
   selector: '[firstWordRed]'
 })
-export class FirstWordRedDirective implements AfterViewInit{
+export class FirstWordRedDirective implements OnChanges{
 
-  constructor(private el: ElementRef) { 
-  }
+  @Input('firstWordRed') text: string = "";
 
-  ngAfterViewInit(): void {
+  constructor(private el: ElementRef) { }
 
-    const text = this.el.nativeElement.textContent.trim();
-    const firstWord = text.split(' ')[0];
-    const restText = text.slice(firstWord.length);
-
-    this.el.nativeElement.innerHTML = `<span style="color: darkred">${firstWord}</span>${restText}`;
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes){
+      const firstWord = this.text.split(' ')[0];
+      const restText = this.text.slice(firstWord.length);
+  
+      this.el.nativeElement.innerHTML = `<span style="color: darkred">${firstWord}</span>${restText}`;
+    }
   }
 }

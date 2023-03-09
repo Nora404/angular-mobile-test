@@ -1,7 +1,7 @@
-<span class="header1" *ngIf="!(timer$ | async)">30 Sekunden</span>
+<span class="header1" *ngIf="!runTimer">30 Sekunden</span>
 
-<span class="header1" *ngIf="(timer$ | async)">{{timer$ | async}} Sekunden</span>
+<span class="header1" *ngIf="runTimer">{{(timer$ | async ) + " Sekunden"}}</span>
 
-<button (click)="handleTimer()">
-    {{!(timer$ | async) ? "Timer starten" : "Timer stoppen"}}
+<button (click)="handleTimer()" class="btnLittle">
+    {{!runTimer ? "Timer starten" : "Timer stoppen"}}
 </button>

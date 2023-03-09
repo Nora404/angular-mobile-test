@@ -1,13 +1,10 @@
 import { Component, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subscription } from 'rxjs';
-import { HttpService } from '../http.service';
+import { DeviceStrength } from '../.class/device.strength'
+import { DeviceStamina } from '../.class/device.stamina'
 
-
-type Post = { strength: Array<Strength>, stamina: Array<Stamina> };
-type Strength = { shortcut: string, name: string, image: string, 
-                  weightRange: { start: number, end: number, steps: number }};
-type Stamina  = { shortcut: string, name: string, image: string };
+type Post = { strength: Array<DeviceStrength>, stamina: Array<DeviceStamina> };
 
 @Component({
   selector: 'app-strength',
@@ -18,7 +15,7 @@ type Stamina  = { shortcut: string, name: string, image: string };
 export class StrengthComponent implements OnDestroy{
 
   imgURL: string = "../../assets/img/bild.png";
-  strength: Array<Strength> = [];
+  strength: Array<DeviceStrength> = [];
 
   constructor(http: HttpClient){
     const post$: Observable<Post> = http.get<Post>('/assets/json/device.JSON');

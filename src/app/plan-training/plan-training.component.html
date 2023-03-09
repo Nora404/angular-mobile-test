@@ -1,1 +1,27 @@
-<p>plan-training works!</p>
+<ng-container *ngFor="let element of plan">
+    <table class="entrie">
+        <tr class="tableHeader">
+            <td style="width: 20%;">{{element.shortcut}}</td>
+            <td>{{element.name}}</td>
+        </tr>
+        <tr>
+            <td>{{getTrainingType(element)}}: </td>
+            <td>{{element.value}} </td>
+        </tr>
+        <tr>
+            <td>Einstellung: </td>
+            <td>{{element.settings}} </td>
+        </tr>
+        <ng-container *ngIf="element.note">
+            <tr>
+                <td>Notizen: </td>
+                <td>{{element.note}} </td>
+            </tr>
+        </ng-container>
+    </table><br>
+</ng-container>
+
+
+<button (click)="handleNew()" class="btnLittle"> Plan Ändern</button>
+<button (click)="handleNew()" class="btnLittle"> Anderer Plan </button>
+<button (click)="handleNew()" class="btnLittle"> Neuer Plan </button>
