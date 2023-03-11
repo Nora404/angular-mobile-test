@@ -1,7 +1,32 @@
-<span class="header1" *ngIf="!runTimer">30 Sekunden</span>
-
-<span class="header1" *ngIf="runTimer">{{(timer$ | async ) + " Sekunden"}}</span>
-
 <button (click)="handleTimer()" class="btnLittle">
-    {{!runTimer ? "Timer starten" : "Timer stoppen"}}
+    {{!(timer$ | async) ? "Pause starten" : "Pause beenden"}}
 </button>
+
+<h1 class="header1" *ngIf="!(timer$ | async)">Pause</h1>
+
+<h1 class="header1" *ngIf="(timer$ | async)">{{(timer$ | async ) + " Sekunden"}}</h1>
+
+<button (click)="handleTrainingStart()" class="btnLittle">
+    Training starten
+</button><br><br>
+
+<table class="entrie">
+    <tr class="tableHeader">
+        <td colspan="2">{{name}}</td>
+    </tr>
+    <tr>
+        <td>Häufigkeit: </td>
+        <td>{{frequency}}</td>
+    </tr>
+    <tr>
+        <td>Bewegungstempo: </td>
+        <td>{{speed}}</td>
+    </tr>
+</table><br>
+
+<!-- --------------------------------------------------------------------------------------- -->
+
+<ng-container *ngFor="let btn of plan">
+    <button class="btnMiniToDo">{{btn.shortcut}}</button>
+</ng-container>
+

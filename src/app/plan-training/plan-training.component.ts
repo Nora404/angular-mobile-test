@@ -2,6 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subscription } from 'rxjs';
 import { Training } from '../.class/training'
+import { Plan } from '../.class/plan'
 
 type Post = { plan: Array<Training> };
 
@@ -12,10 +13,10 @@ type Post = { plan: Array<Training> };
 })
 export class PlanTrainingComponent implements OnDestroy{
 
-  plan: Array<Training> = [];
+  plan : Array<Training> = [];
 
   constructor(http: HttpClient){
-    const post$: Observable<Post> = http.get<Post>('/assets/json/training.JSON');
+    const post$: Observable<Plan> = http.get<Plan>('/assets/json/training.JSON');
 
     this.subscribe = post$.subscribe((post)=>{
       this.plan = post.plan;

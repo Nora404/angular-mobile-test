@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable, startWith, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,20 +19,25 @@ export class TimerService {
     
     if(!this.runTimer){
       this.runTimer = true;
+
       this.interval = setInterval(()=>{
         if(timer <= 0){
           this.runTimer = false;
           clearInterval(this.interval);
+          this.timer.complete;  
         } 
         this.timer.next(timer);
         timer--;
       }, 1000);
     
+
     } else {
       this.runTimer = false;
       this.timer.next(0);
       clearInterval(this.interval);
     } 
+
+  
     return this.runTimer;
   }
   

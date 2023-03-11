@@ -1,5 +1,4 @@
 export interface Training {
-    planName : string,
     sequence: number;
     training: string;
     shortcut: string;
