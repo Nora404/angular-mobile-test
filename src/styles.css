@@ -4,7 +4,7 @@ body{
     font-family: Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    color: gray;
+    color: rgb(94, 94, 94);
 }
 
 .header1{
@@ -23,7 +23,7 @@ body{
 }
 
 #foot{
-    background-color: gainsboro;
+    background-color: rgb(200, 200, 200);
     width: 100%;
     padding: 5%;
     margin: 0;
@@ -31,7 +31,7 @@ body{
 }
 
 #bottom {
-    background-color: gainsboro;
+    background-color: rgb(200, 200, 200);
     width: 100%;
     padding: 5%;
     margin: 0;
@@ -44,7 +44,8 @@ body{
     margin: 0;
     padding: 3%;
     padding-bottom: 8%;
-    border-top: 8px solid darkred;
+    border-top: 8px solid darkred; 
+    text-align: center;
 }
 
 h1 {
@@ -52,7 +53,7 @@ h1 {
 }
 
 button {
-    background-image: linear-gradient(to right, white 0%, gainsboro 100%);
+    background-image: linear-gradient(to right, white 0%, rgb(200, 200, 200) 100%);
     width: 90%;
     height: 10%;
     margin: 5%;
@@ -70,7 +71,7 @@ button:active {
 }
 
 .btnLittle {
-    background-image: linear-gradient(to right, white 0%, gainsboro 100%);
+    background-image: linear-gradient(to right, white 0%, rgb(200, 200, 200) 100%);
     width: 90%;
     height: 7%;
     margin: 2%;
@@ -87,7 +88,7 @@ button:active {
 }
 
 .btnMiniToDo {
-    background-image: linear-gradient(to right, white 0%, gainsboro 100%);
+    background-image: linear-gradient(to right, white 0%, rgb(200, 200, 200) 100%);
     float: left;
     width: 21%;
     height: 7%;
@@ -122,25 +123,41 @@ button:active {
     border: 5px inset gray;
 }
 
-
 .entrie {
     border: 3px solid darkred;
     text-align: left;
-    width: 100%;
+    width: 90%;
     color: black;
     padding: 1%;
+    margin: auto;
 }
 
 .tableHeader {
-    background-color: gainsboro;
+    background-color: rgb(200, 200, 200);
     font-size: larger;
     color: black;
 }
 
 td {
     padding: 1.5%;
+    vertical-align: top;
 }
 
 .w30 {
     width: 30%;
+}
+
+.w90 {
+    width: 100%;
+}
+
+.center {
+    text-align: center;
+    align-content: center;
+    vertical-align: middle;
+}
+
+hr {
+    border-color: white;
+    margin: 4%;
 }

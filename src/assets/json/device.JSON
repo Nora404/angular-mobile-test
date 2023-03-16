@@ -3,7 +3,8 @@
       {
          "shortcut":"A1",
          "name":"Armbeuger",
-         "image":"bild.png",
+         "image":"A1.png",
+         "trained": "arms",
          "weightRange":{
             "start":20,
             "end":300,
@@ -13,7 +14,8 @@
       {
          "shortcut":"A2",
          "name":"Armstrecker",
-         "image":"bild.png",
+         "image":"A2.png",
+         "trained": "arms",
          "weightRange":{
             "start":20,
             "end":300,
@@ -23,7 +25,8 @@
       {
          "shortcut":"A3",
          "name":"Unterarmmuskulatur",
-         "image":"bild.png",
+         "image":"A3.png",
+         "trained": "arms",
          "weightRange":{
             "start":10,
             "end":200,
@@ -33,7 +36,8 @@
       {
          "shortcut":"R1",
          "name":"Überzug",
-         "image":"bild.png",
+         "image":"R1.png",
+         "trained": "top",
          "weightRange":{
             "start":20,
             "end":300,
@@ -43,7 +47,8 @@
       {
          "shortcut":"R5",
          "name":"Haltungsstabilisator",
-         "image":"bild.png",
+         "image":"R5.png",
+         "trained": "top",
          "weightRange":{
             "start":20,
             "end":400,
@@ -53,7 +58,8 @@
       {
          "shortcut":"S3",
          "name":"Schulterpresse",
-         "image":"bild.png",
+         "image":"S3.png",
+         "trained": "top",
          "weightRange":{
             "start":20,
             "end":500,
@@ -63,7 +69,8 @@
       {
          "shortcut":"S2",
          "name":"Schulterabduktion",
-         "image":"bild.png",
+         "image":"S2.png",
+         "trained": "top",
          "weightRange":{
             "start":20,
             "end":300,
@@ -73,7 +80,8 @@
       {
          "shortcut":"R3",
          "name":"Latissimuszug",
-         "image":"bild.png",
+         "image":"R3.png",
+         "trained": "top",
          "weightRange":{
             "start":20,
             "end":500,
@@ -83,7 +91,8 @@
       {
          "shortcut":"N2",
          "name":"Nackenmuskulatur",
-         "image":"bild.png",
+         "image":"N2.png",
+         "trained": "top",
          "weightRange":{
             "start":20,
             "end":300,
@@ -93,7 +102,8 @@
       {
          "shortcut":"R4",
          "name":"Ruderzug",
-         "image":"bild.png",
+         "image":"R4.png",
+         "trained": "top",
          "weightRange":{
             "start":20,
             "end":500,
@@ -103,7 +113,8 @@
       {
          "shortcut":"Br7",
          "name":"Barrenstütz",
-         "image":"bild.png",
+         "image":"Br7.png",
+         "trained": "top",
          "weightRange":{
             "start":20,
             "end":500,
@@ -113,7 +124,8 @@
       {
          "shortcut":"Br5",
          "name":"Brustpresse",
-         "image":"bild.png",
+         "image":"Br5.png",
+         "trained": "top",
          "weightRange":{
             "start":20,
             "end":250,
@@ -123,7 +135,8 @@
       {
          "shortcut":"Br3",
          "name":"Butterfly",
-         "image":"bild.png",
+         "image":"Br3.png",
+         "trained": "top",
          "weightRange":{
             "start":20,
             "end":400,
@@ -133,7 +146,8 @@
       {
          "shortcut":"K1",
          "name":"Klimmzug",
-         "image":"bild.png",
+         "image":"K1.png",
+         "trained": "top",
          "weightRange":{
             "start":10,
             "end":210,
@@ -143,7 +157,8 @@
       {
          "shortcut":"K2",
          "name":"Barrenstütz",
-         "image":"bild.png",
+         "image":"K2.png",
+         "trained": "top",
          "weightRange":{
             "start":10,
             "end":210,
@@ -153,7 +168,8 @@
       {
          "shortcut":"B4",
          "name":"Wadenpresse",
-         "image":"bild.png",
+         "image":"B4.png",
+         "trained": "legs",
          "weightRange":{
             "start":20,
             "end":500,
@@ -163,7 +179,8 @@
       {
          "shortcut":"Br1",
          "name":"Butterfly liegend",
-         "image":"bild.png",
+         "image":"Br1.png",
+         "trained": "top",
          "weightRange":{
             "start":30,
             "end":250,
@@ -173,7 +190,8 @@
       {
          "shortcut":"H3",
          "name":"Abduktion",
-         "image":"bild.png",
+         "image":"H3.png",
+         "trained": "legs",
          "weightRange":{
             "start":20,
             "end":300,
@@ -183,7 +201,8 @@
       {
          "shortcut":"B2",
          "name":"Beinbeuger",
-         "image":"bild.png",
+         "image":"B2.png",
+         "trained": "legs",
          "weightRange":{
             "start":20,
             "end":400,
@@ -193,7 +212,8 @@
       {
          "shortcut":"B1",
          "name":"Beinstrecker",
-         "image":"bild.png",
+         "image":"B1.png",
+         "trained": "legs",
          "weightRange":{
             "start":20,
             "end":500,
@@ -203,7 +223,8 @@
       {
          "shortcut":"B3",
          "name":"Beinpresse",
-         "image":"bild.png",
+         "image":"B3.png",
+         "trained": "legs",
          "weightRange":{
             "start":20,
             "end":500,
@@ -213,7 +234,8 @@
       {
          "shortcut":"H4",
          "name":"Abduktion",
-         "image":"bild.png",
+         "image":"H4.png",
+         "trained": "legs",
          "weightRange":{
             "start":20,
             "end":400,
@@ -223,7 +245,8 @@
       {
          "shortcut":"T3",
          "name":"Rückenstrecker",
-         "image":"bild.png",
+         "image":"T3.png",
+         "trained": "buttom",
          "weightRange":{
             "start":20,
             "end":400,
@@ -233,7 +256,8 @@
       {
          "shortcut":"T2",
          "name":"Bauchmuskulatur",
-         "image":"bild.png",
+         "image":"T2.png",
+         "trained": "buttom",
          "weightRange":{
             "start":20,
             "end":300,
@@ -243,7 +267,8 @@
       {
          "shortcut":"T1",
          "name":"Rotation",
-         "image":"bild.png",
+         "image":"T1.png",
+         "trained": "buttom",
          "weightRange":{
             "start":20,
             "end":300,

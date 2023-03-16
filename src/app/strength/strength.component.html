@@ -1,20 +1,109 @@
-<p>strength works!</p>
+<button class="btnLittle" (click)="active = 'body'">
+    {{active === 'body'? 'Alle Geräte' : 'Zurück zur Übersicht'}}
+</button>
 
-<ng-container *ngFor="let element of strength">
-    <table class="entrie">
-        <tr class="tableHeader">
-            <td class="w30">{{element.shortcut}}</td>
-            <td>{{element.name}}</td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <img src={{imgURL}} alt="bild" style="width: 100%;">
-            </td>
-        </tr>
-        <tr>
-            <td>Gewicht</td>
-            <td>{{element.weightRange.start}} bis {{element.weightRange.end}} </td>
-        </tr>
-    </table><br>
+
+<ng-container *ngIf="active === 'body'">
+    <button (click)="active = 'arms'" class="w30">
+        <img src="../../assets/img/bodyArme.png" alt="arms" class="w90">
+    </button>
+    <button (click)="active = 'buttom'" class="w30">
+        <img src="../../assets/img/bodyButtom.png" alt="buttom" class="w90">
+    </button>
+    <button (click)="active = 'legs'" class="w30">
+        <img src="../../assets/img/bodyBeine.png" alt="legs" class="w90">
+    </button>
+    <button (click)="active = 'top'" class="w30">
+        <img src="../../assets/img/bodyTop.png" alt="top" class="w90">
+    </button>
 </ng-container>
+
+<hr>
+
+
+<ng-container *ngIf="active === 'body'">
+    <ng-container *ngFor="let element of strength">
+        <table class="entrie">
+            <tr class="tableHeader">
+                <td class="w30">{{element.shortcut}}</td>
+                <td>{{element.name}}</td>
+            </tr>
+            <tr>
+                <td>Gewicht:<br>{{element.weightRange.start}} bis {{element.weightRange.end}}</td>
+                <td rowspan="2" class="center">
+                    <img src={{createURL(element.image)}} alt="bild" style="width: 70%;">
+                </td>
+            </tr>
+        </table><br>
+    </ng-container>
+</ng-container>
+
+
+<ng-container *ngIf="active === 'arms'">
+    <ng-container *ngFor="let element of (filterArray('arms'))">
+        <table class="entrie">
+            <tr class="tableHeader">
+                <td class="w30">{{element.shortcut}}</td>
+                <td>{{element.name}}</td>
+            </tr>
+            <tr>
+                <td>Gewicht:<br>{{element.weightRange.start}} bis {{element.weightRange.end}}</td>
+                <td rowspan="2" class="center">
+                    <img src={{createURL(element.image)}} alt="bild" style="width: 70%;">
+                </td>
+            </tr>
+        </table><br>
+    </ng-container>
+ </ng-container>       
+
+ <ng-container *ngIf="active === 'legs'">
+    <ng-container *ngFor="let element of (filterArray('legs'))">
+        <table class="entrie">
+            <tr class="tableHeader">
+                <td class="w30">{{element.shortcut}}</td>
+                <td>{{element.name}}</td>
+            </tr>
+            <tr>
+                <td>Gewicht:<br>{{element.weightRange.start}} bis {{element.weightRange.end}}</td>
+                <td rowspan="2" class="center">
+                    <img src={{createURL(element.image)}} alt="bild" style="width: 70%;">
+                </td>
+            </tr>
+        </table><br>
+    </ng-container>
+ </ng-container>  
+
+ <ng-container *ngIf="active === 'buttom'">
+    <ng-container *ngFor="let element of (filterArray('buttom'))">
+        <table class="entrie">
+            <tr class="tableHeader">
+                <td class="w30">{{element.shortcut}}</td>
+                <td>{{element.name}}</td>
+            </tr>
+            <tr>
+                <td>Gewicht:<br>{{element.weightRange.start}} bis {{element.weightRange.end}}</td>
+                <td rowspan="2" class="center">
+                    <img src={{createURL(element.image)}} alt="bild" style="width: 70%;">
+                </td>
+            </tr>
+        </table><br>
+    </ng-container>
+ </ng-container>  
+
+ <ng-container *ngIf="active === 'top'">
+    <ng-container *ngFor="let element of (filterArray('top'))">
+        <table class="entrie">
+            <tr class="tableHeader">
+                <td class="w30">{{element.shortcut}}</td>
+                <td>{{element.name}}</td>
+            </tr>
+            <tr>
+                <td>Gewicht:<br>{{element.weightRange.start}} bis {{element.weightRange.end}}</td>
+                <td rowspan="2" class="center">
+                    <img src={{createURL(element.image)}} alt="bild" style="width: 70%;">
+                </td>
+            </tr>
+        </table><br>
+    </ng-container>
+ </ng-container>  
 

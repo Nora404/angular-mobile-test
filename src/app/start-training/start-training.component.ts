@@ -18,17 +18,36 @@ export class StartTrainingComponent implements OnDestroy{
   speed : string = "";
   plan : Array<Training> = [];
 
+  strength : Array<Training> = [];
+  stamina : Array<Training> = [];
+
   constructor(private timerService: TimerService, http: HttpClient){
     this.timer$ = this.timerService.getTimer();
 
     const post$: Observable<Plan> = http.get<Plan>('/assets/json/training.JSON');
 
-    this.subscribe = post$.subscribe((post)=>{
+    this.subscribe = post$.subscribe(
+      (post)=>{
       this.name = post.name;
       this.frequency = post.frequency;
       this.speed = post.speed
       this.plan = post.plan;
-    });
+
+      },
+      /*
+      (err)=>{
+        console.log(err);
+      },
+      ()=>{
+        this.strength = this.plan.filter((item)=>{item.training === "strength"});
+        this.stamina = this.plan.filter((item)=>{item.training === "stamina"});
+  
+        console.log(this.plan);
+        console.log(this.strength);
+        console.log(this.stamina);
+      }
+      */
+    );
   }
 
   subscribe: Subscription;

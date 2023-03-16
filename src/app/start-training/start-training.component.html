@@ -2,7 +2,7 @@
     {{!(timer$ | async) ? "Pause starten" : "Pause beenden"}}
 </button>
 
-<h1 class="header1" *ngIf="!(timer$ | async)">Pause</h1>
+<h1 class="header1" *ngIf="!(timer$ | async)">keine Pause</h1>
 
 <h1 class="header1" *ngIf="(timer$ | async)">{{(timer$ | async ) + " Sekunden"}}</h1>
 
