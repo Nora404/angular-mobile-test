@@ -1,1 +1,21 @@
-<p>profil works!</p>
+<h2>{{name}}</h2>
+
+<table class="entrie">
+    <tr>
+        <td>Aktueller Plan:</td>
+        <td>{{training}}</td>
+    </tr>
+    <tr>
+        <td>Letztes Training:</td>
+        <td>{{lastTraining}}</td>
+    </tr>
+</table><br>
+
+<button class="btnLittle" (click)="resetData()">
+    Daten zurück setzten
+</button><br>
+
+<button class="btnLittle" (click)="changeBreakeTime()">
+    Pausenzeit ändern
+</button>
+

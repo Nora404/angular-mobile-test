@@ -9,6 +9,7 @@ import { StaminaComponent } from './stamina/stamina.component';
 import { ProfilComponent } from './profil/profil.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FirstWordRedDirective } from './first-word-red.directive';
+import { IconComponent } from './utilities/icon/icon.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FirstWordRedDirective } from './first-word-red.directive';
     StrengthComponent,
     StaminaComponent,
     ProfilComponent,
-    FirstWordRedDirective
+    FirstWordRedDirective,
+    IconComponent
   ],
   imports: [
     BrowserModule,

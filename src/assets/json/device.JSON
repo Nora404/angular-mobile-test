@@ -191,7 +191,7 @@
          "shortcut":"H3",
          "name":"Abduktion",
          "image":"H3.png",
-         "trained": "legs",
+         "trained": "buttom",
          "weightRange":{
             "start":20,
             "end":300,

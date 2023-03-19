@@ -10,7 +10,7 @@ export class TimerService {
 
   runTimer: boolean = false;
 
-  getTimer(): Observable<number>{
+  get Timer(): Observable<number>{
     return this.timer.asObservable();
   }
 

@@ -12,21 +12,21 @@
 
 <table class="entrie">
     <tr class="tableHeader">
-        <td colspan="2">{{name}}</td>
+        <td colspan="2">{{training.name}}</td>
     </tr>
     <tr>
         <td>Häufigkeit: </td>
-        <td>{{frequency}}</td>
+        <td>{{training.frequency}}</td>
     </tr>
     <tr>
-        <td>Bewegungstempo: </td>
-        <td>{{speed}}</td>
+        <td>Tempo: </td>
+        <td>{{training.speed}}</td>
     </tr>
 </table><br>
 
 <!-- --------------------------------------------------------------------------------------- -->
 
-<ng-container *ngFor="let btn of plan">
-    <button class="btnMiniToDo">{{btn.shortcut}}</button>
+<ng-container *ngFor="let btn of training.plan">
+    <button class="btnMini btnTodo">{{btn.shortcut}}</button>
 </ng-container>
 

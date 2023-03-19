@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, Subscribable, Subscription } from 'rxjs';
 import { DeviceStrength } from '../.class/device.strength'
 import { DeviceStamina } from '../.class/device.stamina'
+import { HttpService } from '../http.service';
 
 type Post = { strength: Array<DeviceStrength>, stamina: Array<DeviceStamina> };
 
@@ -11,21 +12,12 @@ type Post = { strength: Array<DeviceStrength>, stamina: Array<DeviceStamina> };
   templateUrl: './stamina.component.html',
   styleUrls: ['./stamina.component.css']
 })
-export class StaminaComponent implements OnDestroy{
+export class StaminaComponent{
 
   imgURL: string = "../../assets/img/bild.png";
   stamina: Array<DeviceStamina> = [];
 
-  constructor(http: HttpClient){
-    const post$: Observable<Post> = http.get<Post>('/assets/json/device.JSON');
-
-    this.subscribe = post$.subscribe((post)=>{
-      this.stamina = post.stamina;
-    });
-  }
-
-  subscribe: Subscription;
-  ngOnDestroy(): void {
-    this.subscribe.unsubscribe;
+  constructor(private http: HttpService){
+    this.stamina = this.http.Stamina;
   }
 }

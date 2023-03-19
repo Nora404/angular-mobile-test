@@ -2,9 +2,14 @@
 body{
     text-align: center;
     font-family: Helvetica, sans-serif;
+    font-size: 4vw;
     margin: 0;
     padding: 0;
     color: rgb(94, 94, 94);
+}
+
+td {
+    border-bottom: 1px dotted gray;
 }
 
 .header1{
@@ -52,6 +57,7 @@ h1 {
     font-size: 10vw ;
 }
 
+
 button {
     background-image: linear-gradient(to right, white 0%, rgb(200, 200, 200) 100%);
     width: 90%;
@@ -87,8 +93,7 @@ button:active {
     border: 5px inset darkred;
 }
 
-.btnMiniToDo {
-    background-image: linear-gradient(to right, white 0%, rgb(200, 200, 200) 100%);
+.btnMini {
     float: left;
     width: 21%;
     height: 7%;
@@ -99,28 +104,19 @@ button:active {
     border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: black;
-}
-.btnMiniToDo:active {
-    background-color: white;
-    border: 5px inset gray;
 }
 
-.btnMiniDone {
-    background-image: linear-gradient(to right, rgb(86, 172, 90) 0%, rgb(66, 143, 69) 100%);
-    float: left;
-    width: 21%;
-    height: 7%;
-    margin: 2%;
-    padding: 2%;
-    font-size: 6vw;
-    border: 5px outset gray;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    color: black;
+.btnTodo{
+    background-image: linear-gradient(to right, white 0%, rgb(200, 200, 200) 100%);
 }
-.btnMiniDone:active {
-    background-color: white;
-    border: 5px inset gray;
+
+.btnActive{
+    background-image: linear-gradient(to right, white 0%, rgb(200, 200, 200) 100%);
+    border: 5px outset rgb(66, 143, 69);
+}
+
+.btnDone{
+    background-image: linear-gradient(to right, rgb(86, 172, 90) 0%, rgb(66, 143, 69) 100%);
 }
 
 .entrie {
@@ -143,6 +139,10 @@ td {
     vertical-align: top;
 }
 
+.w10 {
+    width: 15%;
+}
+
 .w30 {
     width: 30%;
 }
@@ -160,4 +160,17 @@ td {
 hr {
     border-color: white;
     margin: 4%;
+}
+
+.icon {
+    background-color: rgb(199, 199, 199);
+    float: left;
+    width: 10%;
+    height: 10%;
+    margin: 0%;
+    padding: 0%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 0vw;
+    box-shadow: none;
 }

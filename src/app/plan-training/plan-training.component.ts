@@ -1,8 +1,7 @@
-import { Component, OnDestroy } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, Subscription } from 'rxjs';
+import { Component } from '@angular/core';
 import { Training } from '../.class/training'
 import { Plan } from '../.class/plan'
+import { HttpService } from '../http.service';
 
 type Post = { plan: Array<Training> };
 
@@ -11,28 +10,20 @@ type Post = { plan: Array<Training> };
   templateUrl: './plan-training.component.html',
   styleUrls: ['./plan-training.component.css']
 })
-export class PlanTrainingComponent implements OnDestroy{
+export class PlanTrainingComponent{
 
-  plan : Array<Training> = [];
+  training : Plan;
 
-  constructor(http: HttpClient){
-    const post$: Observable<Plan> = http.get<Plan>('/assets/json/training.JSON');
-
-    this.subscribe = post$.subscribe((post)=>{
-      this.plan = post.plan;
-    });
+  constructor(http: HttpService){
+    this.training = http.Training;
   }
 
-  subscribe: Subscription;
-  ngOnDestroy(): void {
-    this.subscribe.unsubscribe;
-  }
 
   getTrainingType(training: Training){
     return training.training === "strength" ? "Gewicht" : "Zeit";
   }
 
   handleNew(){
-
+    console.log("Neuer Plan");
   }
 }
