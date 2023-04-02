@@ -6,9 +6,11 @@
 
 <h1 class="header1" *ngIf="(timer$ | async)">{{(timer$ | async ) + " Sekunden"}}</h1>
 
-<button (click)="handleTrainingStart()" class="btnLittle">
-    Training starten
+<button (click)="handleTraining()" class="btnLittle">
+    {{!trainingPlaying ? "Training starten" : "Training beenden"}}
 </button><br><br>
+
+<!-- --------------------------------------------------------------------------------------- -->
 
 <table class="entrie">
     <tr class="tableHeader">
@@ -26,7 +28,63 @@
 
 <!-- --------------------------------------------------------------------------------------- -->
 
-<ng-container *ngFor="let btn of training.plan">
-    <button class="btnMini btnTodo">{{btn.shortcut}}</button>
+<ng-container *ngIf="trainingPlaying">
+<table class="activeTable">    
+    <tr>
+        <td rowspan="2">
+            <button class="btnMiniTable btnActive">
+                {{currentTraining.shortcut}}
+            </button>
+        </td>
+        <td> {{currentTraining.settings}}</td>
+        <td rowspan="2" class="count">{{countTraining}} / {{training.plan.length}}</td>
+    </tr>
+
+    <tr><td>{{currentTraining.value}} ({{getTrainingType(currentTraining)}})</td></tr>
+    <tr><td colspan="3">{{currentTraining.note}}</td></tr>
+
+    <tr>
+        <td colspan="3">
+          <div class="iconTable">  
+
+            <app-icon [name]="'double_arrow_down'" [color]="'red'" (click)="handelDoubleDown()" class="test"></app-icon>
+            <app-icon [name]="'arrow_down'" [color]="'orange'" (click)="handelDown()" class="test"></app-icon>
+            <app-icon [name]="'yes'" [color]="'gray'" (click)="handelYes()" class="test"></app-icon>
+            <app-icon [name]="'arrow_up'" [color]="'green'" (click)="handelUp()" class="test"></app-icon>
+            <app-icon [name]="'double_arrow_up'" [color]="'blue'" (click)="handelDoubleUp()" class="test"></app-icon>
+
+          </div>  
+        </td>
+    </tr>
+</table><br>    
 </ng-container>
 
+<!-- --------------------------------------------------------------------------------------- -->
+
+<table class="entrie">
+    <tr class="tableHeader"><td>Ausdauer</td></tr>
+        <tr>
+            <ng-container *ngFor="let btn of StaminaPlan">
+                <button class="btnMini btnTodo">{{btn.shortcut}}</button>
+            </ng-container>
+        </tr>
+    <tr class="tableHeader"><td>Kräftigungs Zirkel</td></tr>
+        <tr>
+            <ng-container *ngFor="let btn of StrenghtPlan">
+                <button class="btnMini btnTodo">{{btn.shortcut}}</button>
+            </ng-container>
+            
+        </tr>
+    <tr class="tableHeader"><td>Stretching Zirkel</td></tr>
+        <tr>
+            <ng-container *ngFor="let btn of StretchingPlan">
+                <button class="btnMini btnTodo">{{btn.shortcut}}</button>
+            </ng-container>
+        </tr>
+</table><br>
+
+<!-- --------------------------------------------------------------------------------------- -->
+
+<app-dialog-two-buttons [title]="'Test'" [message]="'Dialog'" #dialog>
+
+<button (click)="dialog">Dialog</button>    

@@ -13,9 +13,11 @@ type IconNames = "add" | "cancel" | "delete" | "error" | "settings" | "smile" | 
 })
 export class IconComponent implements OnInit{
   @Input() name: IconNames = "smile";
-           url: string = "../../../assets/img/icons/" + this.name + ".png";
+  @Input() color: string = "gray";
+  
+  url: string = "../../../assets/img/icons/" + this.name + ".png";
            
   ngOnInit(){
-    this.url = "../../../assets/img/icons/" + this.name + ".png"
+    this.url = "../../../assets/svg/" + this.name + ".svg"
   }         
 }

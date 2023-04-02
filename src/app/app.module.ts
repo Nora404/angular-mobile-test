@@ -10,6 +10,7 @@ import { ProfilComponent } from './profil/profil.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FirstWordRedDirective } from './first-word-red.directive';
 import { IconComponent } from './utilities/icon/icon.component';
+import { DialogTwoButtonsComponent } from './utilities/dialog-two-buttons/dialog-two-buttons.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { IconComponent } from './utilities/icon/icon.component';
     StaminaComponent,
     ProfilComponent,
     FirstWordRedDirective,
-    IconComponent
+    IconComponent,
+    DialogTwoButtonsComponent
   ],
   imports: [
     BrowserModule,

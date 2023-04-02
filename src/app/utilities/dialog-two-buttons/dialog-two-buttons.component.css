@@ -1,0 +1,28 @@
+/* Die beiden sind standadmäßig unsichtbar */
+#dialog-overlay, #dialog{
+    display: none;
+}
+
+/* Overlay füllt den ganzen Bildschirm und macht alles dahinter dunkler */
+#dialog-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+/* Dialog ist zentriert und hat einen weißen Hintergrund */
+#dialog{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 3%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 10000;
+}

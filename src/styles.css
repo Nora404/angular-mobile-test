@@ -5,7 +5,7 @@ body{
     font-size: 4vw;
     margin: 0;
     padding: 0;
-    color: rgb(94, 94, 94);
+    color: #5e5e5e;
 }
 
 td {
@@ -71,10 +71,6 @@ button {
     color: black;
 } 
 
-button:active {
-    background-color: white;
-    border: 8px inset darkred;
-}
 
 .btnLittle {
     background-image: linear-gradient(to right, white 0%, rgb(200, 200, 200) 100%);
@@ -105,6 +101,22 @@ button:active {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: black;
 }
+.btnMini:active {
+    background-color: white;
+    border: 5px inset darkred;
+}
+
+.btnMiniTable{
+    width: 90%;
+    height: 100%;
+    margin: 2%;
+    padding: 2%;
+    font-size: 6vw;
+    border: 5px outset gray;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: black;
+}
 
 .btnTodo{
     background-image: linear-gradient(to right, white 0%, rgb(200, 200, 200) 100%);
@@ -112,7 +124,7 @@ button:active {
 
 .btnActive{
     background-image: linear-gradient(to right, white 0%, rgb(200, 200, 200) 100%);
-    border: 5px outset rgb(66, 143, 69);
+    border: 5px outset #428f45;
 }
 
 .btnDone{
@@ -126,6 +138,24 @@ button:active {
     color: black;
     padding: 1%;
     margin: auto;
+}
+
+.activeTable {
+    border: 5px outset #428f45;
+    text-align: left;
+    width: 95%;
+    color: black;
+    padding: 1%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.iconTable{
+    display: flex;
+    justify-content : space-between;
+    align-items: center;
+    width: 99%;
 }
 
 .tableHeader {
@@ -162,15 +192,7 @@ hr {
     margin: 4%;
 }
 
-.icon {
-    background-color: rgb(199, 199, 199);
-    float: left;
-    width: 10%;
-    height: 10%;
-    margin: 0%;
-    padding: 0%;
-    border: 1px solid gray;
-    border-radius: 5px;
-    font-size: 0vw;
-    box-shadow: none;
+.test {
+    margin: 2%;
 }
+

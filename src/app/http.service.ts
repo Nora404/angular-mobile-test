@@ -84,7 +84,6 @@ export class HttpService {
   }
 
   resetData(){
-    const url = '/assets/json/training/' + this.config.training + '.JSON';
     const config$: Observable<Config> = this.http.get<Config>('/assets/json/config.JSON');
     const device$: Observable<DeviceJSON> = this.http.get<DeviceJSON>('/assets/json/device.JSON');
     const plan$: Observable<PlanJSON> = this.http.get<PlanJSON>('/assets/json/plan.JSON');
@@ -158,7 +157,7 @@ changeConfigData(data: DataConfig, value: any){
   get Training(): Plan{
     let configPlan = this.config.training;
     let plan = this.training.filter(plan => plan.name === configPlan);
-
-    return plan[0];
+  
+    return plan[0] || null;
   }
 }
