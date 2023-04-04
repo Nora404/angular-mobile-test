@@ -83,8 +83,6 @@
         </tr>
 </table><br>
 
-<!-- --------------------------------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------------------------------- --> 
 
-<app-dialog-two-buttons [title]="'Test'" [message]="'Dialog'" #dialog>
-
-<button (click)="dialog">Dialog</button>    
+<app-dialog-two-buttons (choice)="test($event)" #dialog class="{{hidden}}"></app-dialog-two-buttons>

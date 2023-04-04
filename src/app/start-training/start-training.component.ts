@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild} from '@angular/core';
 import { TimerService } from '../timer.service';
-import { Observable, count } from 'rxjs';
+import { Observable} from 'rxjs';
 import { Plan } from '../.class/plan'
 import { HttpService } from '../http.service';
 import { DefaultTraining, Training } from '../.class/training';
+import { DialogTwoButtonsComponent } from '../utilities/dialog-two-buttons/dialog-two-buttons.component';
 
 @Component({
   selector: 'app-start-training',
@@ -19,12 +20,19 @@ export class StartTrainingComponent{
   currentTraining: Training = new DefaultTraining;
   countTraining: number = 0;
 
+  @ViewChild('dialog') dialog!: DialogTwoButtonsComponent;
+  hidden: string = "hidden";
+
+// -------------------------------------------------------------------------------------------------------------  
+
   constructor(private timerService: TimerService, 
               private http: HttpService){
     
     this.timer$ = this.timerService.Timer;
     this.training = this.http.Training;
   }
+
+  // -------------------------------------------------------------------------------------------------------------  
 
   get StrenghtPlan(): Array<Training>{
     return this.training.plan.filter(item=>item.training ==='strength');
@@ -76,6 +84,10 @@ export class StartTrainingComponent{
     console.log("down...");    
   }
   handelYes(){
+    this.dialog.title = "Passt genau!";
+    this.dialog.message = "An den Einstellungen muss nix geändert werden.";  
+    this.hidden = "";
+
     this.countTraining--;
     console.log("yes...");    
   }
@@ -86,4 +98,12 @@ export class StartTrainingComponent{
     console.log("double up...");    
   }
 
+// -------------------------------------------------------------------------------------------------------------  
+
+  test($event: any){
+    console.log($event);
+    this.hidden = "hidden";
+  }
 }
+
+

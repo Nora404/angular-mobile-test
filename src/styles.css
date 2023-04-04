@@ -89,6 +89,19 @@ button {
     border: 5px inset darkred;
 }
 
+.btnDialog {
+    float: left;
+    width: 45%;
+    height: 7%;
+    margin: 2%;
+    padding: 2%;
+    font-size: 6vw;
+    border: 5px outset gray;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: black;
+}
+
 .btnMini {
     float: left;
     width: 21%;
@@ -125,6 +138,11 @@ button {
 .btnActive{
     background-image: linear-gradient(to right, white 0%, rgb(200, 200, 200) 100%);
     border: 5px outset #428f45;
+}
+
+.btnCancel{
+    background-image: linear-gradient(to right, white 0%, rgb(200, 200, 200) 100%);
+    border: 5px outset darkred;
 }
 
 .btnDone{
@@ -194,5 +212,9 @@ hr {
 
 .test {
     margin: 2%;
+}
+
+.hidden {
+    display: none;
 }
 

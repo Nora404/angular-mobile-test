@@ -1,7 +1,7 @@
 /* Die beiden sind standadmäßig unsichtbar */
-#dialog-overlay, #dialog{
+/* #dialog-overlay, #dialog{
     display: none;
-}
+} */
 
 /* Overlay füllt den ganzen Bildschirm und macht alles dahinter dunkler */
 #dialog-overlay{
@@ -17,11 +17,14 @@
 /* Dialog ist zentriert und hat einen weißen Hintergrund */
 #dialog{
     position: absolute;
+    width: 85%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: left;
     background-color: white;
     padding: 3%;
+    border: 3px solid black;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     z-index: 10000;

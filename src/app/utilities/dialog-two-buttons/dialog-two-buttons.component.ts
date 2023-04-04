@@ -9,14 +9,12 @@ export class DialogTwoButtonsComponent {
 
   @Input() title: string = "Dialog";
   @Input() message: string = "Hallo Welt";
-  @Output() confirmed = new EventEmitter<void>();
-  @Output() cancelled = new EventEmitter<void>();
+  @Output() choice = new EventEmitter<string>();
 
-  confirm(){
-    this.confirmed.emit();
-  }
+// -------------------------------------------------------------------------  
 
-  cancel(){
-    this.cancelled.emit();
+  button(choice: string){
+    this.choice.emit(choice);
   }
+ 
 }
