@@ -131,6 +131,16 @@ button {
     color: black;
 }
 
+.btnMini2{
+    margin: 2%;
+    padding: 2% 3% 2% 3%;
+    font-size: 4vw;
+    border: 3px outset gray;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: black;
+}
+
 .btnTodo{
     background-image: linear-gradient(to right, white 0%, rgb(200, 200, 200) 100%);
 }
@@ -148,6 +158,7 @@ button {
 .btnDone{
     background-image: linear-gradient(to right, rgb(86, 172, 90) 0%, rgb(66, 143, 69) 100%);
 }
+
 
 .entrie {
     border: 3px solid darkred;

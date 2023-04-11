@@ -20,7 +20,7 @@ export class StartTrainingComponent{
   currentTraining: Training = new DefaultTraining;
   countTraining: number = 0;
 
-  @ViewChild('dialog') dialog!: DialogTwoButtonsComponent;
+  @ViewChild('dialog') dialog: DialogTwoButtonsComponent = new DialogTwoButtonsComponent;
   hidden: string = "hidden";
 
 // -------------------------------------------------------------------------------------------------------------  
@@ -100,7 +100,7 @@ export class StartTrainingComponent{
 
 // -------------------------------------------------------------------------------------------------------------  
 
-  test($event: any){
+  test($event: string){
     console.log($event);
     this.hidden = "hidden";
   }

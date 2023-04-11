@@ -1,8 +1,3 @@
-/* Die beiden sind standadmäßig unsichtbar */
-/* #dialog-overlay, #dialog{
-    display: none;
-} */
-
 /* Overlay füllt den ganzen Bildschirm und macht alles dahinter dunkler */
 #dialog-overlay{
     position: fixed;

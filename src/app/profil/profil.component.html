@@ -7,7 +7,7 @@
     </tr>
     <tr>
         <td>Letztes Training:</td>
-        <td>{{lastTraining}}</td>
+        <td>{{lastTrainingDate}}</td>
     </tr>
 </table><br>
 
@@ -19,3 +19,21 @@
     Pausenzeit ändern
 </button>
 
+<button class="btnLittle" (click)="changeTrainingPlan()">
+    Trainingsplan ändern
+</button>
+
+<ng-container *ngIf="allTainingPlans">
+    <table class="entrie">
+    <ng-container *ngFor="let plan of allTainingPlans">
+        <tr>
+            <td>{{plan}}</td>
+            <td><button class="btnMini2" (click)="aktivatePlan(plan)">aktivieren</button></td>
+            <td><button class="btnMini2" (click)="editPlan(plan)">bearbeiten</button></td>
+        </tr>
+    </ng-container>
+    </table>
+</ng-container>
+
+
+<app-dialog-two-buttons (choice)="handleDialog($event)" #dialog class="{{hidden}}">

@@ -13,11 +13,15 @@ type Post = { plan: Array<Training> };
 export class PlanTrainingComponent{
 
   training : Plan;
+  allTainingPlans: string[] | null = null; // null ist sinnvol weil hiermit auch content aktiviert wird
 
-  constructor(http: HttpService){
+  constructor(private http: HttpService){
     this.training = http.Training;
   }
 
+  getTrainingName(){
+    return this.training.name;
+  }
 
   getTrainingType(training: Training){
     return training.training === "strength" ? "Gewicht" : "Zeit";
@@ -26,4 +30,17 @@ export class PlanTrainingComponent{
   handleNew(){
     console.log("Neuer Plan");
   }
+
+  // TRAINING PLAN ----------------------------------------------------------------------------------------------------
+
+  // TODO Aktualisieren der Seite / Feedback funktioniert nicht 
+  changeTrainingPlan(){
+    this.allTainingPlans = this.http.Plans.map(plan => plan.name);
+    // this.training = this.http.Training;
+  }
+  aktivatePlan(plan: string){
+    this.http.changeConfigData("training", plan);
+    this.training = this.http.Training;
+  }
+
 }

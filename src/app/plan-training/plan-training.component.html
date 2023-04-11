@@ -1,3 +1,20 @@
+<button (click)="changeTrainingPlan()" class="btnLittle"> Anderer Plan </button>
+
+<ng-container *ngIf="allTainingPlans">
+    <table class="entrie">
+    <ng-container *ngFor="let plan of allTainingPlans">
+        <tr>
+            <td>{{plan}}</td>
+            <td><button class="btnMini2" (click)="aktivatePlan(plan)">aktivieren</button></td>
+        </tr>
+    </ng-container>
+    </table>
+</ng-container>
+
+<p><strong>
+    {{getTrainingName()}}
+</strong></p>
+
 <ng-container *ngFor="let element of training.plan">
     <table class="entrie">
         <tr class="tableHeader">
@@ -23,5 +40,6 @@
 
 
 <button (click)="handleNew()" class="btnLittle"> Plan Ändern</button>
-<button (click)="handleNew()" class="btnLittle"> Anderer Plan </button>
+
+
 <button (click)="handleNew()" class="btnLittle"> Neuer Plan </button>

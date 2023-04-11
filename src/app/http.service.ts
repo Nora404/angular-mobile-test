@@ -107,10 +107,7 @@ export class HttpService {
     this.training = plan.post;
     this.strength = device.post.strength;  
     this.stamina = device.post.stamina;
-    this.config = config.post;
-
-    console.log("Daten zurück gesetzt, bitte neu laden!");
-    
+    this.config = config.post;    
   }
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -135,8 +132,6 @@ changeConfigData(data: DataConfig, value: any){
   }
   localStorage.setItem('config', JSON.stringify({post}));
   this.config = post;
-
-  console.log("change: " + data + " to " + value);
 }
 
 
@@ -152,6 +147,10 @@ changeConfigData(data: DataConfig, value: any){
 
   get Stamina(): Array<DeviceStamina>{
     return this.stamina;
+  }
+
+  get Plans(): Plan[]{
+    return this.training;
   }
 
   get Training(): Plan{
