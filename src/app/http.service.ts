@@ -24,13 +24,9 @@ export class HttpService {
 // //////////////////////////////////////////////////////////////////////////////////////////////////
 
   constructor(private http: HttpClient) { 
-    this.config = new DefaultConfig();
-
     this.initConfig();
     this.initDevices();    
     this.initTraining();    
-
-    console.log(this.config);
   }
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -88,30 +84,27 @@ export class HttpService {
   }
 
   resetData(){
-    const config$: Observable<Config> = this.http.get<Config>('/assets/json/config.JSON');
-    const device$: Observable<DeviceJSON> = this.http.get<DeviceJSON>('/assets/json/device.JSON');
-    const plan$: Observable<PlanJSON> = this.http.get<PlanJSON>('/assets/json/plan.JSON');
+    this.http.get<Config>('/assets/json/config.JSON').pipe(
+      tap(value => {
+        this.config = value;
+        localStorage.setItem('config', JSON.stringify(value));
+      })
+    ).subscribe();
 
-    config$.subscribe((post)=>{
-        localStorage.setItem('config', JSON.stringify({post}));
-    });
+    this.http.get<DeviceJSON>('/assets/json/device.JSON').pipe(
+      tap(value => {
+        this.strength = value.strength;
+        this.stamina = value.stamina;
+        localStorage.setItem('device', JSON.stringify(value));
+      })
+    ).subscribe();
 
-    device$.subscribe((post)=>{
-      localStorage.setItem('device', JSON.stringify({post}));
-    });
-
-    plan$.subscribe((post)=>{
-      localStorage.setItem('plan', JSON.stringify({post}));
-    });
-
-    let config = JSON.parse(localStorage.getItem('config') || '');
-    let device = JSON.parse(localStorage.getItem('device') || '');
-    let plan = JSON.parse(localStorage.getItem('plan') || '');
-    
-    this.training = plan.post;
-    this.strength = device.post.strength;  
-    this.stamina = device.post.stamina;
-    this.config = config.post;    
+    this.http.get<PlanJSON>('/assets/json/plan.JSON').pipe(
+      tap(value => {
+        this.training = value.plan;
+        localStorage.setItem('plan', JSON.stringify(value.plan));
+      })
+    ).subscribe();
   }
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -159,7 +152,11 @@ changeConfigData(data: DataConfig, value: any){
 
   get Training(): Plan{
     let configPlan = this.config.training;
+    console.log(configPlan);
+    
     let plan = this.training.filter(plan => plan.name === configPlan);
+    console.log(plan);
+    
   
     return plan[0] || new DefaultPlan;
   }

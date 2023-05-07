@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Training } from '../.class/training'
-import { Plan } from '../.class/plan'
+import { DefaultPlan, Plan } from '../.class/plan'
 import { HttpService } from '../http.service';
 
 type Post = { plan: Array<Training> };
@@ -12,7 +12,7 @@ type Post = { plan: Array<Training> };
 })
 export class PlanTrainingComponent{
 
-  training : Plan;
+  training : Plan = new DefaultPlan;
   allTainingPlans: string[] | null = null; // null ist sinnvol weil hiermit auch content aktiviert wird
 
   constructor(private http: HttpService){
