@@ -16,7 +16,7 @@ type DataConfig = "name" | "break" | "training";
 
 export class HttpService {
 
-  config: Config;
+  config: Config = new DefaultConfig;
   training: Array<Plan> = [];
   strength: Array<DeviceStrength> = [];
   stamina: Array<DeviceStamina> = [];
@@ -161,6 +161,6 @@ changeConfigData(data: DataConfig, value: any){
     let configPlan = this.config.training;
     let plan = this.training.filter(plan => plan.name === configPlan);
   
-    return plan[0] || null;
+    return plan[0] || new DefaultPlan;
   }
 }

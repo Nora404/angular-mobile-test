@@ -1,7 +1,7 @@
 import { Component, ViewChild} from '@angular/core';
 import { TimerService } from '../timer.service';
 import { Observable} from 'rxjs';
-import { Plan } from '../.class/plan'
+import { DefaultPlan, Plan } from '../.class/plan'
 import { HttpService } from '../http.service';
 import { DefaultTraining, Training } from '../.class/training';
 import { DialogTwoButtonsComponent } from '../utilities/dialog-two-buttons/dialog-two-buttons.component';
@@ -14,7 +14,7 @@ import { DialogTwoButtonsComponent } from '../utilities/dialog-two-buttons/dialo
 export class StartTrainingComponent{
 
   timer$: Observable<number>;
-  training : Plan;
+  training : Plan =  new DefaultPlan;
   
   trainingPlaying: boolean = false;
   currentTraining: Training = new DefaultTraining;
