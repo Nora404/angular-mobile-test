@@ -74,8 +74,8 @@ export class HttpService {
     const planString: string = localStorage.getItem('plan') || '';
     
     if(planString){
-        const planJson: PlanJSON = JSON.parse(planString);
-        this.training = planJson.plan;
+        const planJson: Plan[]= JSON.parse(planString);
+        this.training = planJson;
         
       } else {
         this.http.get<PlanJSON>('/assets/json/plan.JSON').pipe(
