@@ -27,3 +27,6 @@ npx cap open android
 (drag)="myFunction()"  
 (drop)="myFunction()"  
 (dragover)="myFunction()"
+
+Debuggen auf dem Handy:
+chrome://inspect/#devices

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { DeviceStrength } from './.class/device.strength';
 import { DeviceStamina } from './.class/device.stamina';
 import { Config, DefaultConfig } from './.class/config'
@@ -29,58 +29,62 @@ export class HttpService {
     this.initConfig();
     this.initDevices();    
     this.initTraining();    
+
+    console.log(this.config);
   }
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////
 
   initConfig(){
-    const post$: Observable<Config> = this.http.get<Config>('/assets/json/config.JSON');
-      // holt Daten, fals sie im Local Storage liegen
-      let config: {post: Config} = JSON.parse(localStorage.getItem('config') || '');
-
-      post$.subscribe((post)=>{
-        // Wenn keine Daten da waren, sollen die Daten aus der Datei gespeichert werden
-        if(!config){
-          localStorage.setItem('config', JSON.stringify({post}));
-        }
-      });
-      // Jetzt werden die Daten in die Memberdateien geladen
-      config = JSON.parse(localStorage.getItem('config') || '');
-      this.config = config.post;
+    const configString: string = localStorage.getItem('config') || '';
+    
+    if(configString){
+        this.config =  JSON.parse(configString);
+        
+      } else {
+        this.http.get<Config>('/assets/json/config.JSON').pipe(
+          tap(value => {
+            this.config = value;
+            localStorage.setItem('config', JSON.stringify(value));
+          })
+        ).subscribe();
+      }
   }
 
   initDevices(){
-    const post$: Observable<DeviceJSON> = this.http.get<DeviceJSON>('/assets/json/device.JSON');
-      // holt Daten, fals sie im Local Storage liegen
-      let device: {post: DeviceJSON} = JSON.parse(localStorage.getItem('device') || '');
+    const devicesString: string = localStorage.getItem('device') || '';
+    
+    if(devicesString){
+        const devicesJSON: DeviceJSON = JSON.parse(devicesString);
+        this.strength =  devicesJSON.strength;
+        this.stamina = devicesJSON.stamina;
 
-    post$.subscribe((post)=>{
-      // Wenn keine Daten da waren, sollen die Daten aus der Datei gespeichert werden
-      if(!device){
-        localStorage.setItem('device', JSON.stringify({post}));
+      } else {
+        this.http.get<DeviceJSON>('/assets/json/device.JSON').pipe(
+          tap(value => {
+            this.strength = value.strength;
+            this.stamina = value.stamina;
+            localStorage.setItem('device', JSON.stringify(value));
+          })
+        ).subscribe();
       }
-    });
-      // Jetzt werden die Daten in die Memberdateien geladen
-      device = JSON.parse(localStorage.getItem('device') || '');
-      this.strength = device.post.strength;  
-      this.stamina = device.post.stamina;
   }
 
   initTraining(){
-    const post$: Observable<PlanJSON> = this.http.get<PlanJSON>('/assets/json/plan.JSON');
-      // holt Daten, fals sie im Local Storage liegen
-      let plan: {post: PlanJSON} = JSON.parse(localStorage.getItem('plan') || '');
-
-      post$.subscribe((post)=>{
-        // Wenn keine Daten da waren, sollen die Daten aus der Datei gespeichert werden
-         if(!plan){
-           localStorage.setItem('plan', JSON.stringify({post}));
-         }
-      });
-      // Jetzt werden die Daten in die Memberdateien geladen
-      plan = JSON.parse(localStorage.getItem('plan') || '');
-      
-      this.training = plan.post.plan;
+    const planString: string = localStorage.getItem('plan') || '';
+    
+    if(planString){
+        const planJson: PlanJSON = JSON.parse(planString);
+        this.training = planJson.plan;
+        
+      } else {
+        this.http.get<PlanJSON>('/assets/json/plan.JSON').pipe(
+          tap(value => {
+            this.training = value.plan;
+            localStorage.setItem('plan', JSON.stringify(value.plan));
+          })
+        ).subscribe();
+      }
   }
 
   resetData(){
